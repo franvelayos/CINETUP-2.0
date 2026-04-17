@@ -1,0 +1,38 @@
+erDiagram
+
+    USER {
+        int Id
+        string Name
+        string Email
+        string Password
+        string Role
+    }
+
+    MOVIE {
+        int Id
+        string Title
+        string Director
+        string Category
+        string Summary
+        string ImageURL
+        string BannerURL
+        string Language
+        bool IsAvailable
+    }
+
+    TICKET {
+        int Id
+        int SeatNumber
+        float Price
+        bool IsAvailable
+        datetime PurchaseDate
+        datetime ShowTime
+        date ShowDate
+        int MovieID
+        int UserID
+    }
+
+    %% Relaciones
+
+    USER ||--o{ TICKET : compra
+    MOVIE ||--o{ TICKET : corresponde
